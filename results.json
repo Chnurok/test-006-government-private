@@ -1,0 +1,111 @@
+{
+  "parameters": {
+    "N": 10,
+    "T": 100,
+    "W0": 1000.0,
+    "penalty": 100.0,
+    "seed": 20260518
+  },
+  "selected_configs": {
+    "aggressive": {
+      "terminal_penalty": 25.0,
+      "max_abs_imbalance": null
+    },
+    "cautious": {
+      "terminal_penalty": 25.0,
+      "max_abs_imbalance": 1
+    }
+  },
+  "tuning_tables": {
+    "terminal_penalty_grid": [
+      {
+        "name": "penalty_0",
+        "mean_final": -709.2150418223121,
+        "std_final": 1309.68880525855,
+        "removal_probability": 0.0,
+        "samples": 2000
+      },
+      {
+        "name": "penalty_25",
+        "mean_final": 1097.0928544871142,
+        "std_final": 13.883216160149702,
+        "removal_probability": 0.0,
+        "samples": 2000
+      },
+      {
+        "name": "penalty_50",
+        "mean_final": 1097.0928544871142,
+        "std_final": 13.883216160149702,
+        "removal_probability": 0.0,
+        "samples": 2000
+      },
+      {
+        "name": "penalty_75",
+        "mean_final": 1097.0928544871142,
+        "std_final": 13.883216160149702,
+        "removal_probability": 0.0,
+        "samples": 2000
+      },
+      {
+        "name": "penalty_100",
+        "mean_final": 1097.0928544871142,
+        "std_final": 13.883216160149702,
+        "removal_probability": 0.0,
+        "samples": 2000
+      },
+      {
+        "name": "penalty_125",
+        "mean_final": 1097.0928544871142,
+        "std_final": 13.883216160149702,
+        "removal_probability": 0.0,
+        "samples": 2000
+      },
+      {
+        "name": "penalty_150",
+        "mean_final": 1097.0928544871142,
+        "std_final": 13.883216160149702,
+        "removal_probability": 0.0,
+        "samples": 2000
+      },
+      {
+        "name": "penalty_200",
+        "mean_final": 1097.0928544871142,
+        "std_final": 13.883216160149702,
+        "removal_probability": 0.0,
+        "samples": 2000
+      }
+    ],
+    "cautious_caps": [
+      {
+        "name": "cap_1",
+        "mean_final": 1056.5838910857462,
+        "std_final": 4.863035888740691,
+        "removal_probability": 0.0,
+        "samples": 3000
+      }
+    ]
+  },
+  "evaluation": {
+    "block_strategy": {
+      "name": "block_strategy",
+      "mean_final": 1097.1349063381426,
+      "std_final": 14.302717577903225,
+      "removal_probability": 0.0,
+      "samples": 5000
+    },
+    "cautious_strategy": {
+      "name": "cautious_strategy",
+      "mean_final": 1056.764922767995,
+      "std_final": 4.835307483592525,
+      "removal_probability": 0.0,
+      "samples": 5000
+    },
+    "daily_refresh_strategy": {
+      "name": "daily_refresh_strategy",
+      "mean_final": 1159.9029813833959,
+      "std_final": 36.26706010476079,
+      "removal_probability": 0.0,
+      "samples": 1000
+    }
+  }
+}
