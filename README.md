@@ -1,27 +1,45 @@
-# Test Task Handoff
+# AI Government Test Task
 
-Подготовленный набор для передачи другому боту по задаче \`test_006_government\`.
+This repository contains a completed solution for the test_006_government assignment.
 
-## Что внутри
+## Contents
 
-- \`test_006_government_TZ.md\` — полное ТЗ
-- \`test_006_government_prompt.txt\` — короткий промпт для запуска в другом боте
+- solution.ipynb — main notebook with the problem setup, model, code, results, and conclusions
+- solution.py — script version of the same approach
+- results.json — saved Monte Carlo outputs used in the report
+- visual_report.html — compact visual summary of the final comparison
+- test_006_government_TZ.md — task statement in markdown form
 
-## Исходные файлы
+## Approach
 
-- PDF задачи: \`/home/clawd/.openclaw/media/inbound/test_006_government---65f1b38f-21d3-4261-a24f-bcd47fc53d27.pdf\`
-- Дубликат PDF: \`/home/clawd/.openclaw/media/inbound/test_006_government---3ec5b954-ab4a-4064-a0cb-79fe8d94894c.pdf\`
+The core state variable is the law imbalance:
 
-## Контекст
+`x(t) = D(t) - R(t)`
 
-- Это тестовое задание после этапа с результатом \`10 из 14\`.
-- Решение можно делать с использованием открытых источников и нейросетей.
-- Решение нельзя публиковать в открытых репозиториях или иных открытых источниках.
-- Наиболее рационально брать именно задачу \`test_006_government\`: она чище остальных, хорошо формализуется и даёт сильный результат в виде алгоритма + симуляций + объяснения.
+Then the approval dynamics become:
 
-## Ожидаемый результат от другого бота
+`W(t + 1) = W(t) + x(t) * rho(t)`
 
-- \`solution.ipynb\`
-- опционально \`solution.py\`
-- краткое текстовое объяснение подхода
-- готовность упаковать всё в архив для отправки работодателю
+Inside every forecast window, the decision problem is solved with dynamic programming over the next N days. Three variants are included:
+
+1. Block strategy: recompute once per forecast block.
+2. Cautious strategy: the same logic with a hard cap on imbalance.
+3. Daily refresh strategy: recompute every day using the rolling exact forecast.
+
+## Reported Parameters
+
+- `N = 10`
+- `T = 100`
+- `W(0) = 1000`
+- `penalty(T) = 100`
+
+## Quick Results
+
+- Block strategy: mean `1097.135`, std `14.303`
+- Cautious strategy: mean `1056.765`, std `4.835`
+- Daily refresh strategy: mean `1159.903`, std `36.267`
+- In the reported Monte Carlo runs, early removal was not observed
+
+## Notes
+
+The notebook is the primary deliverable for review. The HTML file is only a compact visual companion and does not replace the notebook.

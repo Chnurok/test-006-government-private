@@ -1,4 +1,4 @@
-# test_006_government
+# Repository Note
 
-Private repository with the solution for the government AI test task.
-Do not publish this repository or mirror it to any public location.
+This file was used during local preparation before publication.
+The main submission entry points are README.md, solution.ipynb, and visual_report.html.
